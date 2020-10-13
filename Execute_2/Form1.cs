@@ -1,4 +1,5 @@
 ﻿using Execute_2.BLL;
+using Execute_2.EE;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,28 @@ namespace Execute_2
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private Genero ListarGenero()
+        {
+            return new Genero
+            {
+                Nombre = txt_genero_nombre.Text.Trim(),
+                Fecha_reg = DateTime.Now
+            };
+        }
+
+        private void btn_alta_genero_Click(object sender, EventArgs e)
+        {
+            var genero = ListarGenero();
+            generoBLL.Alta(genero);
+            RefrescarGrilla();
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
+            txt_genero_nombre.Text = string.Empty;
         }
     }
 }

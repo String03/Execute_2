@@ -14,7 +14,16 @@ namespace Execute_2.DAL
 
         public void Alta(Genero entidad)
         {
-            throw new NotImplementedException();
+            string query = $"Insert into {CrearTabla<Genero>()} (nombre,fecha_reg) values (@nombre,@fecha_reg)";
+            EjecutarQuery.ExecuteNonQuery(query, new Dictionary<string, object>
+            {
+                {
+                    "nombre",entidad.Nombre
+                },
+                {
+                    "fecha_reg",entidad.Fecha_reg
+                }
+            });
         }
 
         public void Baja(Genero entidad)

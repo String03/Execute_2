@@ -17,5 +17,10 @@ namespace Execute_2.BLL
             return dAO.Listar();
         }
 
+        public void Alta(Genero genero)
+        {
+            dAO.Alta(genero);
+        }
+
     }
 }
