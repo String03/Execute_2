@@ -28,7 +28,13 @@ namespace Execute_2.DAL
 
         public void Baja(Genero entidad)
         {
-            throw new NotImplementedException();
+            string query = $"delete from {CrearTabla<Genero>()} where id = @id";
+            EjecutarQuery.ExecuteNonQuery(query, new Dictionary<string, object>
+            {
+                {
+                    "id",entidad.Id
+                }
+            });
         }
 
         public IEnumerable<Genero> Listar()

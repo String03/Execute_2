@@ -22,5 +22,9 @@ namespace Execute_2.BLL
             dAO.Alta(genero);
         }
 
+        public void Baja(Genero genero)
+        {
+            dAO.Baja(genero);
+        }
     }
 }
