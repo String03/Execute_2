@@ -77,6 +77,7 @@
             this.btn_modificacion_genero.TabIndex = 3;
             this.btn_modificacion_genero.Text = "Modificación";
             this.btn_modificacion_genero.UseVisualStyleBackColor = true;
+            this.btn_modificacion_genero.Click += new System.EventHandler(this.btn_modificacion_genero_Click);
             // 
             // txt_genero_nombre
             // 

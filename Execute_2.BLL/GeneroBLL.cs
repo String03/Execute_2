@@ -26,5 +26,10 @@ namespace Execute_2.BLL
         {
             dAO.Baja(genero);
         }
+
+        public void Modificar(Genero genero)
+        {
+            dAO.Modificacion(genero);
+        }
     }
 }

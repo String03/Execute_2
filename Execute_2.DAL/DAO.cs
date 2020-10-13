@@ -51,7 +51,20 @@ namespace Execute_2.DAL
 
         public void Modificacion(Genero entidad)
         {
-            throw new NotImplementedException();
+            string query = $"update {CrearTabla<Genero>()} set nombre = @nombre, fecha_reg = @fecha_reg where id = @id";
+            EjecutarQuery.ExecuteNonQuery(query, new Dictionary<string, object>
+            {
+                {
+                    "id",entidad.Id
+
+                },
+                {
+                    "nombre",entidad.Nombre
+                },
+                {
+                    "fecha_reg",entidad.Fecha_reg
+                }
+            });
         }
     }
 }
